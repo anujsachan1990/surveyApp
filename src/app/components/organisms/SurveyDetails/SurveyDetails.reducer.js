@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { GET_SURVEY_DETAIL_SUCCESS } from './SurveyDetails.contant'
 
 const intialState = {

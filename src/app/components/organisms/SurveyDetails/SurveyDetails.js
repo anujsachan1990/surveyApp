@@ -1,12 +1,13 @@
 import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
-import Circle from 'react-circle'
-import StarRatingComponent from 'react-star-rating-component'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllSurvey } from './SurveyDetails.actions'
 import { getAvgRating } from '../../../../utils'
 import { SurveyDetailStyle } from './SurveyDetails.style'
+import Progress from '../../molecules/Progress'
+import Rating from '../../molecules/Rating'
+
 /**
  * @desc
  */
@@ -41,7 +42,7 @@ const SurveyDetails = ({ location }) => {
 
           {surveyDetail.survey_result_detail && (
             <div>
-              <Circle
+              <Progress
                 progress={
                   surveyDetail.survey_result_detail.response_rate.toFixed(2) *
                   100
@@ -68,7 +69,7 @@ const SurveyDetails = ({ location }) => {
                         </div>
                         <div>
                           <b>Avg Rating:</b>
-                          <StarRatingComponent
+                          <Rating
                             name="rate1"
                             editing={false}
                             starCount={5}
