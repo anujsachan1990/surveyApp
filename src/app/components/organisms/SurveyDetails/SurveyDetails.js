@@ -63,7 +63,8 @@ const SurveyDetails = ({ location }) => {
                     return (
                       <div key={question.description} className="question">
                         <div>
-                          <b>Question:</b> {question.description}
+                          <b>Question:</b>
+                          {question.description}
                         </div>
                         <div>
                           <b>Avg Rating:</b>

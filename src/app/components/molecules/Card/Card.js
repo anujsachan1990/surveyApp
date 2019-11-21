@@ -1,16 +1,17 @@
 import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import Circle from 'react-circle'
+import PropTypes from 'prop-types'
 import { CardContainerStyle } from './Card.style'
 
-const Card = props => {
+const Card = ({ survey }) => {
   const {
     name,
     participant_count,
     response_rate,
     url,
     submitted_response_count,
-  } = props.survey
+  } = survey
   return (
     <CardContainerStyle>
       <Link to={url}>
@@ -34,6 +35,16 @@ const Card = props => {
       </Link>
     </CardContainerStyle>
   )
+}
+
+Card.propTypes = {
+  survey: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    participant_count: PropTypes.string.isRequired,
+    response_rate: PropTypes.string.isRequired,
+    submitted_response_count: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }),
 }
 
 export default memo(Card)
