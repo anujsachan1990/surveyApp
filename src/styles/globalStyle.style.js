@@ -1,17 +1,17 @@
 import { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
 
 const GlobalStyles = createGlobalStyle`
-  ${reset}
+
   /* other styles */
   body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #341cac;
-    color:#fff;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
   }
-  a {
-    color:#fff;
-  }
-`
 
+  a{
+    text-decoration:none;
+    color:#000;
+  }
+
+`
 export default GlobalStyles

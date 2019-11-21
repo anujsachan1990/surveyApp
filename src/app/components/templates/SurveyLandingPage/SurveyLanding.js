@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllSurvey } from './SurveyLanding.actions'
+import { LandingPageStyle } from './SurveryLanding.style'
+import Card from '../../molecules/Card'
 
 /**
  * @desc
@@ -18,22 +20,15 @@ const SurveyLanding = () => {
   }, [])
 
   return (
-    <div>
-      {surveyResult &&
-        surveyResult.map(survey => {
-          return (
-            <Link to={survey.url} key={survey.name}>
-              <div className="survey">
-                {survey.name}
-                {survey.url}
-                {survey.participant_count}
-                {survey.response_rate}
-                {survey.submitted_response_count}
-              </div>
-            </Link>
-          )
-        })}
-    </div>
+    <Fragment>
+      <h1>Survey Results</h1>
+      <LandingPageStyle>
+        {surveyResult &&
+          surveyResult.map(survey => {
+            return <Card survey={survey} key={survey.name} />
+          })}
+      </LandingPageStyle>
+    </Fragment>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 import Circle from 'react-circle'
@@ -6,7 +6,7 @@ import StarRatingComponent from 'react-star-rating-component'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllSurvey } from './SurveyDetails.actions'
 import { getAvgRating } from '../../../../utils'
-
+import { SurveyDetailStyle } from './SurveyDetails.style'
 /**
  * @desc
  */
@@ -28,45 +28,64 @@ const SurveyDetails = ({ location }) => {
   )
 
   return (
-    <div>
-      {surveyDetail.survey_result_detail && (
-        <div>
-          Avg Participation:{' '}
-          <Circle
-            progress={
-              surveyDetail.survey_result_detail.response_rate.toFixed(2) * 100
-            }
-          />
-        </div>
-      )}
+    <Fragment>
+      <SurveyDetailStyle>
+        <div className="surveyStatus">
+          {surveyDetail.survey_result_detail && (
+            <h1>
+              {'Overall '}
+              {surveyDetail.survey_result_detail.name}
+              {' Participation'}
+            </h1>
+          )}
 
-      {surveyDetail.survey_result_detail &&
-        surveyDetail.survey_result_detail.themes.map(theme => {
-          return (
-            <div key={theme.name}>
-              <h2>Theme: {theme.name}</h2>
-
-              {theme.questions.map(question => {
-                return (
-                  <div key={question.description}>
-                    <div>Ques: {question.description}</div>
-                    <div>
-                      Ans: Avg Rating:
-                      <StarRatingComponent
-                        name="rate1"
-                        editing={false}
-                        starCount={5}
-                        value={getAvgRating(question.survey_responses).avg}
-                      />
-                      {getAvgRating(question.survey_responses).avg.toFixed(2)}
-                    </div>
-                  </div>
-                )
-              })}
+          {surveyDetail.survey_result_detail && (
+            <div>
+              <Circle
+                progress={
+                  surveyDetail.survey_result_detail.response_rate.toFixed(2) *
+                  100
+                }
+              />
             </div>
-          )
-        })}
-    </div>
+          )}
+        </div>
+        <div className="surveyQuestions">
+          {surveyDetail.survey_result_detail &&
+            surveyDetail.survey_result_detail.themes.map(theme => {
+              return (
+                <div className="card" key={theme.name}>
+                  <div className="header">
+                    <h2>{theme.name}</h2>
+                  </div>
+
+                  {theme.questions.map(question => {
+                    return (
+                      <div key={question.description} className="question">
+                        <div>
+                          <b>Question:</b> {question.description}
+                        </div>
+                        <div>
+                          <b>Avg Rating:</b>
+                          <StarRatingComponent
+                            name="rate1"
+                            editing={false}
+                            starCount={5}
+                            value={getAvgRating(question.survey_responses).avg}
+                          />
+                          {getAvgRating(question.survey_responses).avg.toFixed(
+                            2
+                          )}
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              )
+            })}
+        </div>
+      </SurveyDetailStyle>
+    </Fragment>
   )
 }
 
