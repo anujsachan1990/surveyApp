@@ -1,0 +1,3 @@
+/*
+    This file is to define global reducers
+*/
