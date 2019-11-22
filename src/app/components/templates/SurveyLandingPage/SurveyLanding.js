@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react'
+import React, { useEffect, Fragment, memo } from 'react'
 import PropTypes from 'prop-types'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -36,4 +36,4 @@ Text.propTypes = {
   children: PropTypes.string,
 }
 
-export default SurveyLanding
+export default memo(SurveyLanding)

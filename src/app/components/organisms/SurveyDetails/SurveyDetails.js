@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react'
+import React, { useEffect, Fragment, memo } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
@@ -97,4 +97,4 @@ SurveyDetails.propTypes = {
   }),
 }
 
-export default withRouter(SurveyDetails)
+export default withRouter(memo(SurveyDetails))

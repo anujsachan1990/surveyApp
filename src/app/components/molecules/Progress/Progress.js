@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import Circle from 'react-circle'
 
@@ -10,4 +10,4 @@ Progress.propTypes = {
   progress: PropTypes.number.isRequired,
 }
 
-export default Progress
+export default memo(Progress)

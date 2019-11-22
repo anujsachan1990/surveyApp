@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import StarRatingComponent from 'react-star-rating-component'
 
@@ -20,4 +20,4 @@ Rating.propTypes = {
   value: PropTypes.number.isRequired,
 }
 
-export default Rating
+export default memo(Rating)
