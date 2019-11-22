@@ -16,7 +16,7 @@
 
 - git clone https://github.com/anujsachan1990/surveyApp.git
 - cd surveyApp
-- Yarn install or npm install
+- yarn install or npm install
 - yarn run dev or npm run dev
 - open url [http://localhost:8080/](http://localhost:8080/)
 
