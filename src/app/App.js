@@ -13,6 +13,7 @@ const App = () => {
         <Switch>
           <Route
             path={Routes.landingPage}
+            exact
             render={() => (
               <ErrorBoundary>
                 <SurveyLanding />

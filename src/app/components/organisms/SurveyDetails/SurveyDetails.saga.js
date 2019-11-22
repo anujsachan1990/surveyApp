@@ -1,5 +1,6 @@
 import { call, takeLatest, put } from 'redux-saga/effects'
 import services from '../../../../global/services'
+import { api } from '../../../../global/apiInterceptor'
 
 import {
   GET_SURVEY_DETAIL,
@@ -8,14 +9,13 @@ import {
 
 export function* onGetSurveyDetail({ currentSurveyNumber }) {
   try {
-    const data = yield call(
-      fetch,
-      `${services.getAllSurvey}${currentSurveyNumber}`
+    const surveyDetails = yield call(
+      api.get,
+      `${services.getAllSurvey}/${currentSurveyNumber}`
     )
-    const surveyDetails = yield data.json()
     yield put({ type: GET_SURVEY_DETAIL_SUCCESS, surveyDetails })
   } catch (e) {
-    return 'No Record Found'
+    return 'handle Error here'
   }
 }
 
