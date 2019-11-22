@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllSurvey } from './SurveyDetails.actions'
 import { getAvgRating } from '../../../../utils'
 import { SurveyDetailStyle } from './SurveyDetails.style'
-import Progress from '../../molecules/Progress'
-import Rating from '../../molecules/Rating'
+import Progress from '../../atoms/Progress'
+import Rating from '../../atoms/Rating'
 
 /**
  * @desc

@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
-import Circle from 'react-circle'
 import PropTypes from 'prop-types'
+import Progress from '../../atoms/Progress'
 import { CardContainerStyle } from './Card.style'
 
 const Card = ({ survey }) => {
@@ -17,8 +17,7 @@ const Card = ({ survey }) => {
       <Link to={url}>
         <div className="card">
           <h3>{name}</h3>
-          <Circle progress={response_rate.toFixed(2) * 100} />
-
+          <Progress progress={response_rate.toFixed(2) * 100} />
           <p>
             {'Participation Count: '}
             {participant_count}
