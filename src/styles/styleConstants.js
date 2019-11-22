@@ -10,6 +10,8 @@ export default {
     lightBlue: '#ecedf0',
     black: '#000000',
     grey: '#f2f8f9',
+    yellow: '#ffb400',
+    lightGreen: '#62BD69',
   },
 
   fonts: {

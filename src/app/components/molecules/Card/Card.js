@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Progress from '../../atoms/Progress'
 import { CardContainerStyle } from './Card.style'
 import Locale from '../../../../locale'
+import { setSurveyComplitionStatus } from '../../../../utils'
 
 const Card = ({ survey }) => {
   const {
@@ -18,7 +19,12 @@ const Card = ({ survey }) => {
       <Link to={url}>
         <div className="card">
           <h3>{name}</h3>
-          <Progress progress={response_rate.toFixed(2) * 100} />
+          <Progress
+            progress={response_rate.toFixed(2) * 100}
+            progressColor={setSurveyComplitionStatus(
+              response_rate.toFixed(2) * 100
+            )}
+          />
           <p>
             {Locale.participationCount}
             {participant_count}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllSurvey } from './SurveyDetails.actions'
-import { getAvgRating } from '../../../../utils'
+import { getAvgRating, setSurveyComplitionStatus } from '../../../../utils'
 import { SurveyDetailStyle } from './SurveyDetails.style'
 import Progress from '../../atoms/Progress'
 import Rating from '../../atoms/Rating'
@@ -48,6 +48,9 @@ const SurveyDetails = ({ location }) => {
                   surveyDetail.survey_result_detail.response_rate.toFixed(2) *
                   100
                 }
+                progressColor={setSurveyComplitionStatus(
+                  surveyDetail.survey_result_detail.response_rate * 100
+                )}
               />
             </div>
           )}

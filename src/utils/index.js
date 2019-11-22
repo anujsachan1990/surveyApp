@@ -1,6 +1,7 @@
 /**
  * @desc Any Global Utility and Helpers
  */
+import Theme from '../styles/styleConstants'
 
 export const getAvgRating = arr => {
   let popularitySum = 0
@@ -18,4 +19,15 @@ export const getAvgRating = arr => {
     avg: popularitySum / itemsFound,
     participant: itemsFound,
   }
+}
+
+export const setSurveyComplitionStatus = rate => {
+  let status = ''
+  if (rate === 100) {
+    status = Theme.colors.lightGreen
+  } else {
+    status = Theme.colors.yellow
+  }
+
+  return status
 }
