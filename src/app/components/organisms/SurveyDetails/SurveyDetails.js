@@ -1,6 +1,7 @@
 import React, { useEffect, Fragment, memo } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllSurvey } from './SurveyDetails.actions'
 import { getAvgRating, setSurveyComplitionStatus } from '../../../../utils'
@@ -8,6 +9,7 @@ import { SurveyDetailStyle } from './SurveyDetails.style'
 import Progress from '../../atoms/Progress'
 import Rating from '../../atoms/Rating'
 import Locale from '../../../../locale'
+import Route from '../../../../global/routes'
 
 /**
  * @desc
@@ -40,7 +42,6 @@ const SurveyDetails = ({ location }) => {
               {Locale.participation}
             </h1>
           )}
-
           {surveyDetail.survey_result_detail && (
             <div>
               <Progress
@@ -55,6 +56,7 @@ const SurveyDetails = ({ location }) => {
             </div>
           )}
         </div>
+        <Link to={Route.landingPage}>{Locale.back}</Link>
         <div className="surveyQuestions">
           {surveyDetail.survey_result_detail &&
             surveyDetail.survey_result_detail.themes.map(theme => {
