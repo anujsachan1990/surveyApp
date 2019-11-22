@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Progress from '../../atoms/Progress'
 import { CardContainerStyle } from './Card.style'
+import Locale from '../../../../locale'
 
 const Card = ({ survey }) => {
   const {
@@ -19,12 +20,12 @@ const Card = ({ survey }) => {
           <h3>{name}</h3>
           <Progress progress={response_rate.toFixed(2) * 100} />
           <p>
-            {'Participation Count: '}
+            {Locale.participationCount}
             {participant_count}
           </p>
 
           <p>
-            {'Total Submission: '}
+            {Locale.totalSubmission}
             {submitted_response_count}
           </p>
           <div className="go-corner">

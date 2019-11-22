@@ -5,6 +5,7 @@ import Loader from '../../atoms/Loader'
 import { getAllSurvey } from './SurveyLanding.actions'
 import { LandingPageStyle } from './SurveryLanding.style'
 import Card from '../../molecules/Card'
+import Locale from '../../../../locale'
 
 /**
  * @desc
@@ -24,7 +25,7 @@ const SurveyLanding = () => {
 
   return (
     <Fragment>
-      <h1>Survey Results</h1>
+      <h1>{Locale.surveyResults}</h1>
       {isLoading ? (
         <Loader />
       ) : (

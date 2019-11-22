@@ -7,6 +7,7 @@ import { getAvgRating } from '../../../../utils'
 import { SurveyDetailStyle } from './SurveyDetails.style'
 import Progress from '../../atoms/Progress'
 import Rating from '../../atoms/Rating'
+import Locale from '../../../../locale'
 
 /**
  * @desc
@@ -34,9 +35,9 @@ const SurveyDetails = ({ location }) => {
         <div className="surveyStatus">
           {surveyDetail.survey_result_detail && (
             <h1>
-              {'Overall '}
+              {Locale.overall}
               {surveyDetail.survey_result_detail.name}
-              {' Participation'}
+              {Locale.participation}
             </h1>
           )}
 
@@ -68,7 +69,7 @@ const SurveyDetails = ({ location }) => {
                           {question.description}
                         </div>
                         <div>
-                          <b>Avg Rating:</b>
+                          <b>{Locale.avgRating}</b>
                           <Rating
                             name="rate1"
                             editing={false}
