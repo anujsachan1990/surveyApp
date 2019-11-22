@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { styleConstants } from '../../../../styles'
 
 export default styled.div`
   position: fixed;
@@ -19,10 +18,10 @@ export default styled.div`
     margin-left: -50px;
     > div {
       &:first-child {
-        background: ${styleConstants.green};
+        background: ${props => props.theme.colors.green};
       }
       &:last-child {
-        background: ${styleConstants.red};
+        background: ${props => props.theme.colors.red};
       }
     }
   }

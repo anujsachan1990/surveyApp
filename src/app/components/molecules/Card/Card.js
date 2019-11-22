@@ -27,7 +27,7 @@ const Card = ({ survey }) => {
             {'Total Submission: '}
             {submitted_response_count}
           </p>
-          <div className="go-corner" href="#">
+          <div className="go-corner">
             <div className="go-arrow">→</div>
           </div>
         </div>

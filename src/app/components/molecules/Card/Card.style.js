@@ -12,7 +12,7 @@ export const CardContainerStyle = styled.div`
     overflow: hidden;
     top: 0;
     right: 0;
-    background-color: #00838d;
+    background-color: ${props => props.theme.colors.green};
     border-radius: 0 4px 0 32px;
   }
 
@@ -27,7 +27,7 @@ export const CardContainerStyle = styled.div`
     display: block;
     position: relative;
     min-width: 250px;
-    background-color: #f2f8f9;
+    background-color: ${props => props.theme.colors.grey};
     border-radius: 4px;
     padding: 20px 24px;
     margin: 12px;
@@ -41,7 +41,7 @@ export const CardContainerStyle = styled.div`
       z-index: -1;
       top: -16px;
       right: -16px;
-      background: #00838d;
+      background: ${props => props.theme.colors.green};
       height: 32px;
       width: 32px;
       border-radius: 32px;
@@ -65,11 +65,11 @@ export const CardContainerStyle = styled.div`
     }
     h3 {
       transition: all 0.3s ease-out;
-      color: #ffffff;
+      color: ${props => props.theme.colors.white};
     }
     svg {
       text {
-        fill: #ffffff;
+        fill: ${props => props.theme.colors.white};
         transition: all 0.3s ease-out;
       }
     }

@@ -14,8 +14,8 @@ export const SurveyDetailStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
     .header {
-      background: #00838d;
-      color: #fff;
+      background: ${props => props.theme.colors.green};
+      color: ${props => props.theme.colors.white};
       margin-left: -40px;
       margin-right: -40px;
       margin-bottom: 30px;
@@ -25,7 +25,7 @@ export const SurveyDetailStyle = styled.div`
     }
     .card {
       flex: 1 0 33%;
-      background: #f2f8f9;
+      background: ${props => props.theme.colors.grey};
       margin: 20px;
       padding: 0 40px 0;
       h2 {

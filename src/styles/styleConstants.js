@@ -1,16 +1,22 @@
 /**
  * @desc All Global Style Constants
  */
+
 export default {
-  defaultColor: '#333333',
-  lightGrey: '#e1e1e1',
-  red: '#cc3333',
-  green: '#00838d',
-  white: '#ffffff',
-  lightBlue: '#def1f4',
-  primaryFont: 'arial',
-  defaultFontSize: '17px',
-  smallFontSize: '17px',
-  mediumFontSize: '22px',
-  largeFontSize: '24px',
+  colors: {
+    red: '#cc3333',
+    green: '#00838d',
+    white: '#ffffff',
+    lightBlue: '#ecedf0',
+    black: '#000000',
+    grey: '#f2f8f9',
+  },
+
+  fonts: {
+    primaryFont: `Roboto, sans-serif;`,
+    defaultFontSize: '17px',
+    smallFontSize: '17px',
+    mediumFontSize: '22px',
+    largeFontSize: '24px',
+  },
 }

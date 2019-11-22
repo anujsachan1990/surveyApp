@@ -10,7 +10,7 @@ import LoaderStyled from './Loader.style'
 const Loader = React.memo(function Loader({ ...props }) {
   return (
     <LoaderStyled {...props}>
-      <BounceLoader size={100} color="#def1f4" />
+      <BounceLoader size={100} />
     </LoaderStyled>
   )
 })

@@ -4,13 +4,13 @@ const GlobalStyles = createGlobalStyle`
 
   /* other styles */
   body {
-    font-family: 'Roboto', sans-serif;
-    color: #000;
+    font-family: ${props => props.theme.fonts.primaryFont}
+    color: ${props => props.theme.colors.black}
   }
 
   a{
     text-decoration:none;
-    color:#000;
+    color: ${props => props.theme.colors.black}
   }
 
 `
