@@ -21,6 +21,7 @@ const App = () => {
           />
           <Route
             path={Routes.surveyDetailPage}
+            exact
             render={() => (
               <ErrorBoundary>
                 <SurveyDetail />
