@@ -6,7 +6,7 @@
 - Redux 
 - Redux-Saga
 - React Router
-- Style Component (for Component Style Reusability)
+- StyledComponent (for Component Style Reusability)
 - Axios with custom API Interceptor
 - YARN / NPM for package Dependencies
 - ES6 
