@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import ErrorBoundary from './ErrorBoundary'
 import SurveyLanding from './components/templates/SurveyLandingPage'
 import SurveyDetail from './components/organisms/SurveyDetails'
+import Routes from '../global/routes'
 
 const App = () => {
   return (
@@ -11,18 +12,18 @@ const App = () => {
       <Router>
         <Switch>
           <Route
-            path="/surveys/:number"
+            path={Routes.landingPage}
             render={() => (
               <ErrorBoundary>
-                <SurveyDetail />
+                <SurveyLanding />
               </ErrorBoundary>
             )}
           />
           <Route
-            path="/"
+            path={Routes.surveyDetailPage}
             render={() => (
               <ErrorBoundary>
-                <SurveyLanding />
+                <SurveyDetail />
               </ErrorBoundary>
             )}
           />
