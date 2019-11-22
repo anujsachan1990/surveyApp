@@ -1,7 +1,7 @@
 import React, { useEffect, Fragment, memo } from 'react'
 import PropTypes from 'prop-types'
-
 import { useDispatch, useSelector } from 'react-redux'
+import Loader from '../../atoms/Loader'
 import { getAllSurvey } from './SurveyLanding.actions'
 import { LandingPageStyle } from './SurveryLanding.style'
 import Card from '../../molecules/Card'
@@ -22,6 +22,7 @@ const SurveyLanding = () => {
   return (
     <Fragment>
       <h1>Survey Results</h1>
+
       <LandingPageStyle>
         {surveyResult &&
           surveyResult.map(survey => {

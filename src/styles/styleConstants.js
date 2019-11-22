@@ -5,7 +5,7 @@ export default {
   defaultColor: '#333333',
   lightGrey: '#e1e1e1',
   red: '#cc3333',
-  green: '#009900',
+  green: '#00838d',
   white: '#ffffff',
   lightBlue: '#def1f4',
   primaryFont: 'arial',
