@@ -1,3 +1,0 @@
-/**
- * @desc All Global Constants
- */

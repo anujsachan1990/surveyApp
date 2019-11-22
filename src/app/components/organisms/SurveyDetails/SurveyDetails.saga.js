@@ -1,5 +1,5 @@
 import { call, takeLatest, put } from 'redux-saga/effects'
-//import { service } from '../../global'
+import services from '../../../../global/services'
 
 import {
   GET_SURVEY_DETAIL,
@@ -12,7 +12,7 @@ export function* onGetSurveyDetail({ currentSurveyNumber }) {
     // yield delay(3000)
     const data = yield call(
       fetch,
-      `https://px2yf2j445.execute-api.us-west-2.amazonaws.com/production/surveys/${currentSurveyNumber}`
+      `${services.getAllSurvey}${currentSurveyNumber}`
     )
     const surveyDetails = yield data.json()
     yield put({ type: GET_SURVEY_DETAIL_SUCCESS, surveyDetails })
