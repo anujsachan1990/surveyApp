@@ -2,7 +2,7 @@
   "name": "surveyapp",
   "version": "1.0.0",
   "description": "surveyapp",
-  "repository": "https://github.com/anujsachan1990",
+  "repository": "https://github.com/anujsachan1990/surveyApp.git",
   "author": "Anuj Sachan",
   "main": "index.js",
   "scripts": {
