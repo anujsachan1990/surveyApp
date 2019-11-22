@@ -7,10 +7,6 @@ import { LandingPageStyle } from './SurveryLanding.style'
 import Card from '../../molecules/Card'
 import Locale from '../../../../locale'
 
-/**
- * @desc
- */
-
 const SurveyLanding = () => {
   const dispatch = useDispatch()
   const surveyResult = useSelector(
