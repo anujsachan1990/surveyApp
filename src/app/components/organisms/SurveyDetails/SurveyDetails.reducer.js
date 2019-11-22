@@ -7,7 +7,7 @@ const intialState = {
 
 const SurveyDetailReducer = (state = intialState, action) => {
   switch (action.type) {
-    case GET_SURVEY_DETAIL_SUCCESS: {
+    case GET_SURVEY_DETAIL_SUCCESS:
       state = {
         ...state,
         surveyDetail: {
@@ -15,8 +15,12 @@ const SurveyDetailReducer = (state = intialState, action) => {
         },
       }
       break
-    }
+
     default:
+      state = {
+        ...state,
+      }
+      break
   }
   return state
 }
