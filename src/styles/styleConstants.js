@@ -16,9 +16,5 @@ export default {
 
   fonts: {
     primaryFont: `Roboto, sans-serif;`,
-    defaultFontSize: '17px',
-    smallFontSize: '17px',
-    mediumFontSize: '22px',
-    largeFontSize: '24px',
   },
 }
