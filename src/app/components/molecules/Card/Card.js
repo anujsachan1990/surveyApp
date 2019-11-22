@@ -40,9 +40,9 @@ const Card = ({ survey }) => {
 Card.propTypes = {
   survey: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    participant_count: PropTypes.string.isRequired,
-    response_rate: PropTypes.string.isRequired,
-    submitted_response_count: PropTypes.string.isRequired,
+    participant_count: PropTypes.number.isRequired,
+    response_rate: PropTypes.number.isRequired,
+    submitted_response_count: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,
   }),
 }

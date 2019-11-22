@@ -1,22 +1,16 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import rootSaga from './sagas/rootSaga'
-
-import SurveyLandingReducer from './components/templates/SurveyLandingPage/SurveryLanding.reducer'
-import SurveyDetailReducer from './components/organisms/SurveyDetails/SurveyDetails.reducer'
+import rootReducer from './reducers/index'
 
 const sagaMiddleware = createSagaMiddleware()
-
 const composeEnhancers = composeWithDevTools({
   // Specify here name, actionsBlacklist, actionsCreators and other options
 })
 
 const store = createStore(
-  combineReducers({
-    SurveyLandingReducer,
-    SurveyDetailReducer,
-  }),
+  rootReducer,
   {},
   composeEnhancers(applyMiddleware(sagaMiddleware))
 )

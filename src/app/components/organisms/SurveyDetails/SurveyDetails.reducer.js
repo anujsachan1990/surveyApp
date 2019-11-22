@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { GET_SURVEY_DETAIL_SUCCESS } from './SurveyDetails.contant'
 
 const intialState = {
