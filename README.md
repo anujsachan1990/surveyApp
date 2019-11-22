@@ -1,5 +1,7 @@
 # Survey App
 
+## Live Preview Available
+[https://surveyapp.netlify.com/](https://surveyapp.netlify.com/)
 
 ## Technology Stack
 - React JS 
@@ -37,12 +39,6 @@
 - React latest features: (Hooks, Memo )
 - Localization 
 - Eslint (Airbnb rules)
-
-
-## Live Preview Available
-[https://surveyapp.netlify.com/](https://surveyapp.netlify.com/)
-
-
 
 ## Scalable Frontend Architecture
 
