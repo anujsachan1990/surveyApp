@@ -4,16 +4,16 @@ import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllSurvey } from './SurveyDetails.actions'
-import { getAvgRating, setSurveyComplitionStatus } from '../../../../utils'
+import {
+  getAvgRating,
+  setSurveyComplitionStatus,
+  getTwoDecimalPlaces,
+} from '../../../../utils'
 import { SurveyDetailStyle } from './SurveyDetails.style'
 import Progress from '../../atoms/Progress'
 import Rating from '../../atoms/Rating'
 import Locale from '../../../../locale'
 import Route from '../../../../global/routes'
-
-/**
- * @desc
- */
 
 const SurveyDetails = ({ location }) => {
   const dispatch = useDispatch()
@@ -24,6 +24,7 @@ const SurveyDetails = ({ location }) => {
     state => state.SurveyDetailReducer.surveyDetail
   )
 
+  // update data once route is changed
   useEffect(
     () => {
       dispatch(getAllSurvey(currentSurveyNumber))
@@ -46,8 +47,9 @@ const SurveyDetails = ({ location }) => {
             <div>
               <Progress
                 progress={
-                  surveyDetail.survey_result_detail.response_rate.toFixed(2) *
-                  100
+                  getTwoDecimalPlaces(
+                    surveyDetail.survey_result_detail.response_rate
+                  ) * 100
                 }
                 progressColor={setSurveyComplitionStatus(
                   surveyDetail.survey_result_detail.response_rate * 100
@@ -70,19 +72,19 @@ const SurveyDetails = ({ location }) => {
                     return (
                       <div key={question.description} className="question">
                         <div>
-                          <b>Question:</b>
+                          <b>{Locale.question}</b>
                           {question.description}
                         </div>
                         <div>
                           <b>{Locale.avgRating}</b>
                           <Rating
-                            name="rate1"
+                            name="rate"
                             editing={false}
                             starCount={5}
                             value={getAvgRating(question.survey_responses).avg}
                           />
-                          {getAvgRating(question.survey_responses).avg.toFixed(
-                            2
+                          {getTwoDecimalPlaces(
+                            getAvgRating(question.survey_responses).avg
                           )}
                         </div>
                       </div>

@@ -33,3 +33,5 @@ export const setSurveyComplitionStatus = rate => {
 
   return status
 }
+
+export const getTwoDecimalPlaces = num => num.toFixed(2)

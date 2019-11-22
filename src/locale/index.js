@@ -5,5 +5,6 @@ export default {
   overall: 'Overall ',
   participation: ' Participation',
   avgRating: 'Avg Rating:',
+  question: 'Question: ',
   back: '< Back to survey List',
 }

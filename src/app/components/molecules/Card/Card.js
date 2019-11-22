@@ -4,7 +4,10 @@ import PropTypes from 'prop-types'
 import Progress from '../../atoms/Progress'
 import { CardContainerStyle } from './Card.style'
 import Locale from '../../../../locale'
-import { setSurveyComplitionStatus } from '../../../../utils'
+import {
+  setSurveyComplitionStatus,
+  getTwoDecimalPlaces,
+} from '../../../../utils'
 
 const Card = ({ survey }) => {
   const {
@@ -20,9 +23,9 @@ const Card = ({ survey }) => {
         <div className="card">
           <h3>{name}</h3>
           <Progress
-            progress={response_rate.toFixed(2) * 100}
+            progress={getTwoDecimalPlaces(response_rate) * 100}
             progressColor={setSurveyComplitionStatus(
-              response_rate.toFixed(2) * 100
+              getTwoDecimalPlaces(response_rate) * 100
             )}
           />
           <p>
