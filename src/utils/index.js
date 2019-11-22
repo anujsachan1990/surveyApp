@@ -25,8 +25,10 @@ export const setSurveyComplitionStatus = rate => {
   let status = ''
   if (rate === 100) {
     status = Theme.colors.lightGreen
-  } else {
+  } else if (rate > 60 && rate < 100) {
     status = Theme.colors.yellow
+  } else {
+    status = Theme.colors.red
   }
 
   return status
