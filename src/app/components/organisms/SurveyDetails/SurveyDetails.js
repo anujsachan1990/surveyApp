@@ -8,6 +8,7 @@ import {
   getAvgRating,
   setSurveyComplitionStatus,
   getTwoDecimalPlaces,
+  groupByResponse,
 } from '../../../../utils'
 import { SurveyDetailStyle } from './SurveyDetails.style'
 import Progress from '../../atoms/Progress'
@@ -77,6 +78,13 @@ const SurveyDetails = ({ location }) => {
                         </div>
                         <div>
                           <b>{Locale.avgRating}</b>
+                          {console.log(
+                            question.survey_responses &&
+                              groupByResponse(
+                                question.survey_responses,
+                                'response_content'
+                              )
+                          )}
                           <Rating
                             name="rate"
                             editing={false}

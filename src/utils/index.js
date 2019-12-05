@@ -21,6 +21,15 @@ export const getAvgRating = arr => {
   }
 }
 
+export const groupByResponse = (arr, key) => {
+  const groupByArry = []
+  for (let i = 1; i <= 5; i++) {
+    groupByArry.push(arr.filter(data => data[key] === i.toString()))
+  }
+  console.log('groupByArry', groupByArry)
+  return groupByArry
+}
+
 export const setSurveyComplitionStatus = rate => {
   let status = ''
   if (rate === 100) {
